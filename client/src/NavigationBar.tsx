@@ -1,6 +1,6 @@
 import { Container, Nav,NavDropdown, Navbar } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getMessaging, getToken } from "firebase/messaging";
+import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -21,6 +21,11 @@ function handleClick(e:React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     alert("test");
 }
 
+
+onMessage(messaging, (payload) => {
+    console.log('Message received. ', payload);
+    // ...
+  });
 
 function getTokenValue(){
     getToken(messaging, {vapidKey: "BOfVDcgzi3_TRWLRzwe-6L6mV2JRzTB2SvbYf1UuUM7aixpn0Hs0IEjCGUaNZGaBgqFymgz-IhU9ldpSpLZyBXI"}).then((currentToken) => {
