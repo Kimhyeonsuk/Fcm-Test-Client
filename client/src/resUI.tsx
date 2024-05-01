@@ -38,8 +38,6 @@ function resetUI() {
     });
   }
 
-
-
 function showToken(currentToken: string) {
     // Show token in console and UI.
     const tokenElement = document.querySelector('#token')!;
