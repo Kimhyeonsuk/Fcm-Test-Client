@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NavigationBar from './NavigationBar';
 
 function App() {
   return (
@@ -22,7 +21,7 @@ function App() {
     //   </header>
     // </div>
     <>
-      <NavigationBar/>
+      "Hello"
     </>
   );
 }
