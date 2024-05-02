@@ -2,7 +2,6 @@ import { initializeApp } from 'firebase/app';
 import { MessagePayload, deleteToken, getMessaging, getToken, onMessage } from 'firebase/messaging';
 import { firebaseConfig, vapidKey } from './config';
 
-
 initializeApp(firebaseConfig);
 const messaging = getMessaging();
 
@@ -132,12 +131,12 @@ function updateUIForPushEnabled(currentToken: string) {
     showToken(currentToken);
   }
   
-  function updateUIForPushPermissionRequired() {
-    showHideDiv(tokenDivId, false);
-    showHideDiv(permissionDivId, true);
-  }
+function updateUIForPushPermissionRequired() {
+  showHideDiv(tokenDivId, false);
+  showHideDiv(permissionDivId, true);
+}
   
 document.getElementById('request-permission-button')!.addEventListener('click', requestPermission);
 document.getElementById('delete-token-button')!.addEventListener('click', deleteTokenFromFirebase);
 
-resetUI();
+export default resetUI();
