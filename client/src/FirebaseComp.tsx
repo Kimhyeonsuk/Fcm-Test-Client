@@ -5,6 +5,7 @@ import { firebaseConfig, vapidKey } from './config';
 
 initializeApp(firebaseConfig);
 const messaging = getMessaging();
+const token = getToken(messaging, {vapidKey});
 
 const tokenDivId = 'token_div';
 const permissionDivId = 'permission_div';
