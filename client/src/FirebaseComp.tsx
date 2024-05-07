@@ -3,8 +3,8 @@ import { initializeApp } from 'firebase/app';
 import { MessagePayload, deleteToken, getMessaging, getToken, onMessage } from 'firebase/messaging';
 import { firebaseConfig, vapidKey } from './config';
 
-initializeApp(firebaseConfig);
-const messaging = getMessaging();
+const firebaseapp = initializeApp(firebaseConfig);
+const messaging = getMessaging(firebaseapp);
 const token = getToken(messaging, {vapidKey});
 
 const tokenDivId = 'token_div';
